@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 5000;
 
 // MySQL Database connection
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",  
-  password: "root",  
-  database: "edu_users",  
+  host: process.env.DB_HOST, // Use DB_HOST from .env
+  user: process.env.DB_USER, // Use DB_USER from .env
+  password: process.env.DB_PASSWORD, // Use DB_PASSWORD from .env
+  database: process.env.DB_DATABASE, // Use DB_DATABASE from .env
 });
 
 db.connect((err) => {
